@@ -12,15 +12,13 @@ public class Main {
         int stockActual;
         
         miCoche = new Coche("Opel",12000,500);
-        try 
-        {
-            System.out.println("Venta de Coches");
-            miCoche.vender(300);
-        } catch (Exception e)
-        {
-            System.out.print("Fallo al vender");
-        }
+        operativaVenta(miCoche);
         
+        operativaCompra(miCoche);
+    }
+
+    public static void operativaCompra(Coche miCoche) {
+        int stockActual;
         try
         {
             System.out.println("Compra de Coches");
@@ -31,6 +29,17 @@ public class Main {
         }
         stockActual = miCoche.obtenerStock();
         System.out.println("El stock actual es"+ stockActual );
+    }
+
+    public static void operativaVenta(Coche miCoche) {
+        try
+        {
+            System.out.println("Venta de Coches");
+            miCoche.vender(300);
+        } catch (Exception e)
+        {
+            System.out.print("Fallo al vender");
+        }
     }
 
 }
